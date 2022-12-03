@@ -1,0 +1,10 @@
+C:\Users\Braglin\source\repos\SGPA\SGPA\bin\Release\SGPA.exe.config
+C:\Users\Braglin\source\repos\SGPA\SGPA\bin\Release\SGPA.exe
+C:\Users\Braglin\source\repos\SGPA\SGPA\bin\Release\SGPA.pdb
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.csproj.AssemblyReference.cache
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.Main.resources
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.Properties.Resources.resources
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.csproj.GenerateResource.cache
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.csproj.CoreCompileInputs.cache
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.exe
+C:\Users\Braglin\source\repos\SGPA\SGPA\obj\Release\SGPA.pdb

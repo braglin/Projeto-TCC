@@ -49,6 +49,7 @@ namespace SGPA
             this.loginErrorLbl = new System.Windows.Forms.Label();
             this.projetosScr = new System.Windows.Forms.Panel();
             this.salvarNovoProjeto = new System.Windows.Forms.Panel();
+            this.erroNovoProjetoLbl = new System.Windows.Forms.Label();
             this.novoProjetoNomeTxt = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.salvarNovoProjetoBtn = new System.Windows.Forms.Button();
@@ -80,15 +81,12 @@ namespace SGPA
             this.label10 = new System.Windows.Forms.Label();
             this.novoCartaoAdcBtn = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cardDescRtxt = new System.Windows.Forms.RichTextBox();
+            this.cardEquipeTxt = new System.Windows.Forms.TextBox();
             this.kanbanVoltarBtn = new System.Windows.Forms.Button();
             this.kanbanAddCardBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label9 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -110,7 +108,18 @@ namespace SGPA
             this.revCb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.projetoNomeBomTxt = new System.Windows.Forms.Label();
-            this.erroNovoProjetoLbl = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.moveToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.waitingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ongoingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.canceledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).BeginInit();
@@ -126,6 +135,7 @@ namespace SGPA
             this.panel9.SuspendLayout();
             this.bomScr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,7 +149,7 @@ namespace SGPA
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(194, 729);
+            this.panel1.Size = new System.Drawing.Size(194, 768);
             this.panel1.TabIndex = 0;
             // 
             // navPanel
@@ -153,11 +163,12 @@ namespace SGPA
             // 
             // sairBtn
             // 
+            this.sairBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sairBtn.FlatAppearance.BorderSize = 0;
             this.sairBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sairBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sairBtn.ForeColor = System.Drawing.Color.Silver;
-            this.sairBtn.Location = new System.Drawing.Point(0, 676);
+            this.sairBtn.Location = new System.Drawing.Point(0, 715);
             this.sairBtn.Name = "sairBtn";
             this.sairBtn.Size = new System.Drawing.Size(194, 53);
             this.sairBtn.TabIndex = 4;
@@ -241,27 +252,28 @@ namespace SGPA
             // 
             // loginBtn
             // 
+            this.loginBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(162)))), ((int)(((byte)(176)))));
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.loginBtn.Location = new System.Drawing.Point(223, 390);
+            this.loginBtn.Location = new System.Drawing.Point(242, 390);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(345, 77);
             this.loginBtn.TabIndex = 1;
             this.loginBtn.Text = "Entrar";
-            this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.UseVisualStyleBackColor = false;
             this.loginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // usuarioTxt
             // 
-            this.usuarioTxt.BackColor = System.Drawing.Color.Gray;
+            this.usuarioTxt.BackColor = System.Drawing.Color.Gainsboro;
             this.usuarioTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usuarioTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.usuarioTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.usuarioTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usuarioTxt.Location = new System.Drawing.Point(305, 255);
+            this.usuarioTxt.Location = new System.Drawing.Point(324, 255);
             this.usuarioTxt.Name = "usuarioTxt";
             this.usuarioTxt.Size = new System.Drawing.Size(263, 32);
             this.usuarioTxt.TabIndex = 2;
@@ -273,7 +285,7 @@ namespace SGPA
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(219, 262);
+            this.label2.Location = new System.Drawing.Point(238, 262);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 3;
@@ -284,7 +296,7 @@ namespace SGPA
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(219, 319);
+            this.label3.Location = new System.Drawing.Point(238, 319);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 4;
@@ -292,12 +304,12 @@ namespace SGPA
             // 
             // senhaTxt
             // 
-            this.senhaTxt.BackColor = System.Drawing.Color.Gray;
+            this.senhaTxt.BackColor = System.Drawing.Color.Gainsboro;
             this.senhaTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.senhaTxt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.senhaTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.senhaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.senhaTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.senhaTxt.Location = new System.Drawing.Point(305, 313);
+            this.senhaTxt.Location = new System.Drawing.Point(324, 313);
             this.senhaTxt.Name = "senhaTxt";
             this.senhaTxt.PasswordChar = '*';
             this.senhaTxt.Size = new System.Drawing.Size(263, 32);
@@ -317,7 +329,7 @@ namespace SGPA
             this.loginScr.Controls.Add(this.usuarioTxt);
             this.loginScr.Location = new System.Drawing.Point(194, 0);
             this.loginScr.Name = "loginScr";
-            this.loginScr.Size = new System.Drawing.Size(816, 729);
+            this.loginScr.Size = new System.Drawing.Size(830, 768);
             this.loginScr.TabIndex = 6;
             // 
             // loginErrorLbl
@@ -325,7 +337,7 @@ namespace SGPA
             this.loginErrorLbl.AutoSize = true;
             this.loginErrorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginErrorLbl.ForeColor = System.Drawing.Color.Firebrick;
-            this.loginErrorLbl.Location = new System.Drawing.Point(201, 358);
+            this.loginErrorLbl.Location = new System.Drawing.Point(220, 358);
             this.loginErrorLbl.Name = "loginErrorLbl";
             this.loginErrorLbl.Size = new System.Drawing.Size(403, 20);
             this.loginErrorLbl.TabIndex = 6;
@@ -348,7 +360,7 @@ namespace SGPA
             this.projetosScr.Enabled = false;
             this.projetosScr.Location = new System.Drawing.Point(194, 0);
             this.projetosScr.Name = "projetosScr";
-            this.projetosScr.Size = new System.Drawing.Size(816, 729);
+            this.projetosScr.Size = new System.Drawing.Size(830, 768);
             this.projetosScr.TabIndex = 7;
             this.projetosScr.Visible = false;
             // 
@@ -368,9 +380,21 @@ namespace SGPA
             this.salvarNovoProjeto.TabIndex = 11;
             this.salvarNovoProjeto.Visible = false;
             // 
+            // erroNovoProjetoLbl
+            // 
+            this.erroNovoProjetoLbl.AutoSize = true;
+            this.erroNovoProjetoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.erroNovoProjetoLbl.ForeColor = System.Drawing.Color.Firebrick;
+            this.erroNovoProjetoLbl.Location = new System.Drawing.Point(25, 96);
+            this.erroNovoProjetoLbl.Name = "erroNovoProjetoLbl";
+            this.erroNovoProjetoLbl.Size = new System.Drawing.Size(284, 20);
+            this.erroNovoProjetoLbl.TabIndex = 15;
+            this.erroNovoProjetoLbl.Text = "Nome inválido... Tente novamente!";
+            this.erroNovoProjetoLbl.Visible = false;
+            // 
             // novoProjetoNomeTxt
             // 
-            this.novoProjetoNomeTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.novoProjetoNomeTxt.BackColor = System.Drawing.Color.Gainsboro;
             this.novoProjetoNomeTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.novoProjetoNomeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoProjetoNomeTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
@@ -382,7 +406,7 @@ namespace SGPA
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
+            this.button4.BackColor = System.Drawing.Color.Gainsboro;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -396,10 +420,11 @@ namespace SGPA
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // salvarNovoProjetoBtn
             // 
-            this.salvarNovoProjetoBtn.BackColor = System.Drawing.Color.Silver;
+            this.salvarNovoProjetoBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.salvarNovoProjetoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salvarNovoProjetoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarNovoProjetoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -429,64 +454,67 @@ namespace SGPA
             // 
             // bomBtn
             // 
+            this.bomBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.bomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bomBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bomBtn.Image = global::SGPA.Properties.Resources.bom;
             this.bomBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bomBtn.Location = new System.Drawing.Point(400, 664);
+            this.bomBtn.Location = new System.Drawing.Point(400, 700);
             this.bomBtn.Name = "bomBtn";
             this.bomBtn.Size = new System.Drawing.Size(200, 59);
             this.bomBtn.TabIndex = 12;
             this.bomBtn.Text = "BOM";
             this.bomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bomBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bomBtn.UseVisualStyleBackColor = true;
+            this.bomBtn.UseVisualStyleBackColor = false;
             this.bomBtn.Click += new System.EventHandler(this.BomBtn_Click);
             // 
             // salvarProjetoBtn
             // 
+            this.salvarProjetoBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.salvarProjetoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salvarProjetoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarProjetoBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salvarProjetoBtn.Image = global::SGPA.Properties.Resources._99867_guardar_save_icon;
             this.salvarProjetoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.salvarProjetoBtn.Location = new System.Drawing.Point(606, 664);
+            this.salvarProjetoBtn.Location = new System.Drawing.Point(621, 700);
             this.salvarProjetoBtn.Name = "salvarProjetoBtn";
             this.salvarProjetoBtn.Size = new System.Drawing.Size(200, 59);
             this.salvarProjetoBtn.TabIndex = 11;
             this.salvarProjetoBtn.Text = "Salvar";
             this.salvarProjetoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.salvarProjetoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.salvarProjetoBtn.UseVisualStyleBackColor = true;
+            this.salvarProjetoBtn.UseVisualStyleBackColor = false;
             this.salvarProjetoBtn.Click += new System.EventHandler(this.SalvarProjetoBtn_Click);
             // 
             // kanbanBtn
             // 
+            this.kanbanBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.kanbanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kanbanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kanbanBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.kanbanBtn.Image = global::SGPA.Properties.Resources.kanban;
             this.kanbanBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.kanbanBtn.Location = new System.Drawing.Point(192, 664);
+            this.kanbanBtn.Location = new System.Drawing.Point(192, 700);
             this.kanbanBtn.Name = "kanbanBtn";
             this.kanbanBtn.Size = new System.Drawing.Size(200, 59);
             this.kanbanBtn.TabIndex = 5;
             this.kanbanBtn.Text = "Kanban";
             this.kanbanBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kanbanBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.kanbanBtn.UseVisualStyleBackColor = true;
+            this.kanbanBtn.UseVisualStyleBackColor = false;
             this.kanbanBtn.Click += new System.EventHandler(this.KanbanBtn_Click);
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.Gray;
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
             this.panel8.Controls.Add(this.label6);
             this.panel8.Controls.Add(this.projEquipeRtx);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel8.Location = new System.Drawing.Point(192, 580);
+            this.panel8.Location = new System.Drawing.Point(192, 618);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(614, 68);
+            this.panel8.Size = new System.Drawing.Size(629, 68);
             this.panel8.TabIndex = 10;
             // 
             // label6
@@ -503,7 +531,7 @@ namespace SGPA
             // 
             // projEquipeRtx
             // 
-            this.projEquipeRtx.BackColor = System.Drawing.Color.Gray;
+            this.projEquipeRtx.BackColor = System.Drawing.Color.Gainsboro;
             this.projEquipeRtx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.projEquipeRtx.Cursor = System.Windows.Forms.Cursors.Hand;
             this.projEquipeRtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -511,19 +539,19 @@ namespace SGPA
             this.projEquipeRtx.Location = new System.Drawing.Point(3, 25);
             this.projEquipeRtx.Multiline = false;
             this.projEquipeRtx.Name = "projEquipeRtx";
-            this.projEquipeRtx.Size = new System.Drawing.Size(608, 40);
+            this.projEquipeRtx.Size = new System.Drawing.Size(626, 40);
             this.projEquipeRtx.TabIndex = 0;
             this.projEquipeRtx.Text = "";
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Gray;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.projDescRtx);
             this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel7.Location = new System.Drawing.Point(419, 8);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(387, 191);
+            this.panel7.Size = new System.Drawing.Size(402, 191);
             this.panel7.TabIndex = 10;
             // 
             // label5
@@ -540,20 +568,20 @@ namespace SGPA
             // 
             // projDescRtx
             // 
-            this.projDescRtx.BackColor = System.Drawing.Color.Gray;
+            this.projDescRtx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.projDescRtx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.projDescRtx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.projDescRtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projDescRtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projDescRtx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.projDescRtx.Location = new System.Drawing.Point(3, 23);
             this.projDescRtx.Name = "projDescRtx";
-            this.projDescRtx.Size = new System.Drawing.Size(381, 165);
+            this.projDescRtx.Size = new System.Drawing.Size(397, 165);
             this.projDescRtx.TabIndex = 0;
             this.projDescRtx.Text = "";
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.BackColor = System.Drawing.Color.Gainsboro;
             this.panel6.Controls.Add(this.encCb);
             this.panel6.Controls.Add(this.monCb);
             this.panel6.Controls.Add(this.exeCb);
@@ -565,6 +593,7 @@ namespace SGPA
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(211, 191);
             this.panel6.TabIndex = 10;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // encCb
             // 
@@ -645,13 +674,13 @@ namespace SGPA
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.projHistRtx);
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel5.Location = new System.Drawing.Point(192, 214);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(614, 348);
+            this.panel5.Size = new System.Drawing.Size(629, 381);
             this.panel5.TabIndex = 9;
             // 
             // label1
@@ -668,19 +697,20 @@ namespace SGPA
             // 
             // projHistRtx
             // 
-            this.projHistRtx.BackColor = System.Drawing.Color.Gray;
+            this.projHistRtx.BackColor = System.Drawing.Color.Gainsboro;
             this.projHistRtx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.projHistRtx.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.projHistRtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projHistRtx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projHistRtx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.projHistRtx.Location = new System.Drawing.Point(4, 23);
             this.projHistRtx.Name = "projHistRtx";
-            this.projHistRtx.Size = new System.Drawing.Size(607, 322);
+            this.projHistRtx.Size = new System.Drawing.Size(622, 355);
             this.projHistRtx.TabIndex = 0;
             this.projHistRtx.Text = "";
             // 
             // novoProjBtn
             // 
+            this.novoProjBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.novoProjBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(162)))), ((int)(((byte)(176)))));
             this.novoProjBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.novoProjBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -690,36 +720,37 @@ namespace SGPA
             this.novoProjBtn.Size = new System.Drawing.Size(176, 58);
             this.novoProjBtn.TabIndex = 8;
             this.novoProjBtn.Text = "Novo Projeto";
-            this.novoProjBtn.UseVisualStyleBackColor = true;
+            this.novoProjBtn.UseVisualStyleBackColor = false;
             this.novoProjBtn.Click += new System.EventHandler(this.novoProjBtn_Click);
             // 
             // listaProjetos
             // 
-            this.listaProjetos.BackColor = System.Drawing.Color.Gray;
+            this.listaProjetos.BackColor = System.Drawing.Color.Gainsboro;
             this.listaProjetos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listaProjetos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listaProjetos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listaProjetos.FormattingEnabled = true;
             this.listaProjetos.ItemHeight = 24;
-            this.listaProjetos.Location = new System.Drawing.Point(8, 80);
+            this.listaProjetos.Location = new System.Drawing.Point(8, 84);
             this.listaProjetos.Name = "listaProjetos";
-            this.listaProjetos.Size = new System.Drawing.Size(176, 626);
+            this.listaProjetos.Size = new System.Drawing.Size(176, 674);
             this.listaProjetos.TabIndex = 7;
+            this.listaProjetos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listaProjetos_MouseDoubleClick);
             // 
             // kanbanScr
             // 
             this.kanbanScr.Controls.Add(this.novoCartaoScr);
+            this.kanbanScr.Controls.Add(this.flowLayoutPanel3);
+            this.kanbanScr.Controls.Add(this.flowLayoutPanel1);
             this.kanbanScr.Controls.Add(this.kanbanVoltarBtn);
             this.kanbanScr.Controls.Add(this.kanbanAddCardBtn);
             this.kanbanScr.Controls.Add(this.label8);
             this.kanbanScr.Controls.Add(this.label7);
-            this.kanbanScr.Controls.Add(this.listView3);
-            this.kanbanScr.Controls.Add(this.listView2);
-            this.kanbanScr.Controls.Add(this.listView1);
             this.kanbanScr.Controls.Add(this.label9);
+            this.kanbanScr.Controls.Add(this.flowLayoutPanel2);
             this.kanbanScr.Location = new System.Drawing.Point(194, 0);
             this.kanbanScr.Name = "kanbanScr";
-            this.kanbanScr.Size = new System.Drawing.Size(816, 729);
+            this.kanbanScr.Size = new System.Drawing.Size(830, 768);
             this.kanbanScr.TabIndex = 8;
             this.kanbanScr.Visible = false;
             // 
@@ -727,12 +758,12 @@ namespace SGPA
             // 
             this.novoCartaoScr.BackColor = System.Drawing.Color.Gray;
             this.novoCartaoScr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.novoCartaoScr.Controls.Add(this.novoCartaoCloseBtn);
             this.novoCartaoScr.Controls.Add(this.label10);
-            this.novoCartaoScr.Controls.Add(this.novoCartaoAdcBtn);
             this.novoCartaoScr.Controls.Add(this.panel9);
+            this.novoCartaoScr.Controls.Add(this.novoCartaoCloseBtn);
+            this.novoCartaoScr.Controls.Add(this.novoCartaoAdcBtn);
             this.novoCartaoScr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.novoCartaoScr.Location = new System.Drawing.Point(280, 269);
+            this.novoCartaoScr.Location = new System.Drawing.Point(290, 256);
             this.novoCartaoScr.Name = "novoCartaoScr";
             this.novoCartaoScr.Size = new System.Drawing.Size(256, 212);
             this.novoCartaoScr.TabIndex = 20;
@@ -740,7 +771,7 @@ namespace SGPA
             // 
             // novoCartaoCloseBtn
             // 
-            this.novoCartaoCloseBtn.BackColor = System.Drawing.Color.Gray;
+            this.novoCartaoCloseBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.novoCartaoCloseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.novoCartaoCloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoCartaoCloseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -767,7 +798,7 @@ namespace SGPA
             // 
             // novoCartaoAdcBtn
             // 
-            this.novoCartaoAdcBtn.BackColor = System.Drawing.Color.Gray;
+            this.novoCartaoAdcBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.novoCartaoAdcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.novoCartaoAdcBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoCartaoAdcBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -781,58 +812,59 @@ namespace SGPA
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel9.BackColor = System.Drawing.Color.Gainsboro;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel9.Controls.Add(this.richTextBox4);
-            this.panel9.Controls.Add(this.textBox3);
+            this.panel9.Controls.Add(this.cardDescRtxt);
+            this.panel9.Controls.Add(this.cardEquipeTxt);
             this.panel9.Location = new System.Drawing.Point(9, 32);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(237, 115);
             this.panel9.TabIndex = 3;
             // 
-            // richTextBox4
+            // cardDescRtxt
             // 
-            this.richTextBox4.BackColor = System.Drawing.Color.Gray;
-            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richTextBox4.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(229, 75);
-            this.richTextBox4.TabIndex = 4;
-            this.richTextBox4.Text = "";
+            this.cardDescRtxt.BackColor = System.Drawing.Color.Gainsboro;
+            this.cardDescRtxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardDescRtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardDescRtxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cardDescRtxt.Location = new System.Drawing.Point(3, 3);
+            this.cardDescRtxt.Name = "cardDescRtxt";
+            this.cardDescRtxt.Size = new System.Drawing.Size(229, 75);
+            this.cardDescRtxt.TabIndex = 4;
+            this.cardDescRtxt.Text = "";
             // 
-            // textBox3
+            // cardEquipeTxt
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Gray;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Location = new System.Drawing.Point(3, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(229, 26);
-            this.textBox3.TabIndex = 3;
+            this.cardEquipeTxt.BackColor = System.Drawing.Color.Gainsboro;
+            this.cardEquipeTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardEquipeTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardEquipeTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cardEquipeTxt.Location = new System.Drawing.Point(3, 84);
+            this.cardEquipeTxt.Name = "cardEquipeTxt";
+            this.cardEquipeTxt.Size = new System.Drawing.Size(229, 26);
+            this.cardEquipeTxt.TabIndex = 3;
             // 
             // kanbanVoltarBtn
             // 
+            this.kanbanVoltarBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.kanbanVoltarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kanbanVoltarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kanbanVoltarBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.kanbanVoltarBtn.Image = global::SGPA.Properties.Resources._5172489_arrow_back_loop_icon;
             this.kanbanVoltarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.kanbanVoltarBtn.Location = new System.Drawing.Point(598, 664);
+            this.kanbanVoltarBtn.Location = new System.Drawing.Point(617, 699);
             this.kanbanVoltarBtn.Name = "kanbanVoltarBtn";
             this.kanbanVoltarBtn.Size = new System.Drawing.Size(200, 59);
             this.kanbanVoltarBtn.TabIndex = 19;
             this.kanbanVoltarBtn.Text = "Voltar";
             this.kanbanVoltarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.kanbanVoltarBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.kanbanVoltarBtn.UseVisualStyleBackColor = true;
+            this.kanbanVoltarBtn.UseVisualStyleBackColor = false;
             this.kanbanVoltarBtn.Click += new System.EventHandler(this.FecharKanbanBtn_Click);
             // 
             // kanbanAddCardBtn
             // 
-            this.kanbanAddCardBtn.BackColor = System.Drawing.Color.Gray;
+            this.kanbanAddCardBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.kanbanAddCardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.kanbanAddCardBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kanbanAddCardBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -849,7 +881,7 @@ namespace SGPA
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(548, 22);
+            this.label8.Location = new System.Drawing.Point(567, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 15;
@@ -860,48 +892,11 @@ namespace SGPA
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(280, 22);
+            this.label7.Location = new System.Drawing.Point(290, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Em andamento";
-            // 
-            // listView3
-            // 
-            this.listView3.BackColor = System.Drawing.Color.Gray;
-            this.listView3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(552, 45);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(246, 612);
-            this.listView3.TabIndex = 13;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView2
-            // 
-            this.listView2.BackColor = System.Drawing.Color.Gray;
-            this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(284, 45);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(246, 612);
-            this.listView2.TabIndex = 12;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView1
-            // 
-            this.listView1.BackColor = System.Drawing.Color.Gray;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 45);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(246, 612);
-            this.listView1.TabIndex = 11;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -924,6 +919,7 @@ namespace SGPA
             // 
             // bomScr
             // 
+            this.bomScr.Controls.Add(this.button2);
             this.bomScr.Controls.Add(this.button6);
             this.bomScr.Controls.Add(this.button1);
             this.bomScr.Controls.Add(this.button5);
@@ -934,18 +930,18 @@ namespace SGPA
             this.bomScr.Controls.Add(this.projetoNomeBomTxt);
             this.bomScr.Location = new System.Drawing.Point(194, 0);
             this.bomScr.Name = "bomScr";
-            this.bomScr.Size = new System.Drawing.Size(816, 729);
+            this.bomScr.Size = new System.Drawing.Size(830, 768);
             this.bomScr.TabIndex = 9;
             this.bomScr.Visible = false;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Silver;
+            this.button6.BackColor = System.Drawing.Color.Gainsboro;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(493, 5);
+            this.button6.Location = new System.Drawing.Point(409, 5);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(60, 59);
             this.button6.TabIndex = 47;
@@ -955,12 +951,12 @@ namespace SGPA
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.BackColor = System.Drawing.Color.Gainsboro;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(427, 5);
+            this.button1.Location = new System.Drawing.Point(342, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(60, 59);
             this.button1.TabIndex = 46;
@@ -970,12 +966,12 @@ namespace SGPA
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.Location = new System.Drawing.Point(334, 5);
+            this.button5.Location = new System.Drawing.Point(268, 5);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(60, 59);
             this.button5.TabIndex = 45;
@@ -985,15 +981,15 @@ namespace SGPA
             // 
             // salvarBomBtn
             // 
-            this.salvarBomBtn.BackColor = System.Drawing.Color.Silver;
+            this.salvarBomBtn.BackColor = System.Drawing.Color.Gainsboro;
             this.salvarBomBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salvarBomBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salvarBomBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salvarBomBtn.Image = global::SGPA.Properties.Resources._99867_guardar_save_icon;
             this.salvarBomBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.salvarBomBtn.Location = new System.Drawing.Point(584, 5);
+            this.salvarBomBtn.Location = new System.Drawing.Point(625, 5);
             this.salvarBomBtn.Name = "salvarBomBtn";
-            this.salvarBomBtn.Size = new System.Drawing.Size(153, 59);
+            this.salvarBomBtn.Size = new System.Drawing.Size(134, 59);
             this.salvarBomBtn.TabIndex = 44;
             this.salvarBomBtn.Text = "Salvar";
             this.salvarBomBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1004,6 +1000,7 @@ namespace SGPA
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -1015,11 +1012,11 @@ namespace SGPA
             this.Column11,
             this.Column7,
             this.Column14});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 71);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 654);
+            this.dataGridView1.Size = new System.Drawing.Size(811, 687);
             this.dataGridView1.TabIndex = 40;
             // 
             // Column2
@@ -1097,7 +1094,7 @@ namespace SGPA
             // 
             this.revCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revCb.FormattingEnabled = true;
-            this.revCb.Location = new System.Drawing.Point(743, 24);
+            this.revCb.Location = new System.Drawing.Point(766, 24);
             this.revCb.Name = "revCb";
             this.revCb.Size = new System.Drawing.Size(53, 39);
             this.revCb.TabIndex = 39;
@@ -1107,7 +1104,7 @@ namespace SGPA
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(741, 5);
+            this.label12.Location = new System.Drawing.Point(764, 5);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 17);
             this.label12.TabIndex = 37;
@@ -1117,36 +1114,124 @@ namespace SGPA
             // 
             this.projetoNomeBomTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projetoNomeBomTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.projetoNomeBomTxt.Location = new System.Drawing.Point(6, 4);
+            this.projetoNomeBomTxt.Location = new System.Drawing.Point(6, 5);
             this.projetoNomeBomTxt.Name = "projetoNomeBomTxt";
-            this.projetoNomeBomTxt.Size = new System.Drawing.Size(315, 59);
+            this.projetoNomeBomTxt.Size = new System.Drawing.Size(251, 59);
             this.projetoNomeBomTxt.TabIndex = 36;
             this.projetoNomeBomTxt.Text = "...";
             this.projetoNomeBomTxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // erroNovoProjetoLbl
+            // button2
             // 
-            this.erroNovoProjetoLbl.AutoSize = true;
-            this.erroNovoProjetoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.erroNovoProjetoLbl.ForeColor = System.Drawing.Color.Firebrick;
-            this.erroNovoProjetoLbl.Location = new System.Drawing.Point(25, 96);
-            this.erroNovoProjetoLbl.Name = "erroNovoProjetoLbl";
-            this.erroNovoProjetoLbl.Size = new System.Drawing.Size(284, 20);
-            this.erroNovoProjetoLbl.TabIndex = 15;
-            this.erroNovoProjetoLbl.Text = "Nome inválido... Tente novamente!";
-            this.erroNovoProjetoLbl.Visible = false;
+            this.button2.BackColor = System.Drawing.Color.Gainsboro;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Image = global::SGPA.Properties.Resources._5172489_arrow_back_loop_icon;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(475, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 59);
+            this.button2.TabIndex = 48;
+            this.button2.Text = "Voltar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 48);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(246, 648);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(294, 48);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(246, 648);
+            this.flowLayoutPanel2.TabIndex = 22;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(571, 48);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(246, 648);
+            this.flowLayoutPanel3.TabIndex = 22;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moveToToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.removeToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            // 
+            // moveToToolStripMenuItem
+            // 
+            this.moveToToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.waitingToolStripMenuItem,
+            this.ongoingToolStripMenuItem,
+            this.doneToolStripMenuItem,
+            this.canceledToolStripMenuItem});
+            this.moveToToolStripMenuItem.Name = "moveToToolStripMenuItem";
+            this.moveToToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moveToToolStripMenuItem.Text = "Move To...";
+            // 
+            // waitingToolStripMenuItem
+            // 
+            this.waitingToolStripMenuItem.Name = "waitingToolStripMenuItem";
+            this.waitingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.waitingToolStripMenuItem.Text = "Waiting";
+            // 
+            // ongoingToolStripMenuItem
+            // 
+            this.ongoingToolStripMenuItem.Name = "ongoingToolStripMenuItem";
+            this.ongoingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ongoingToolStripMenuItem.Text = "On Going";
+            // 
+            // doneToolStripMenuItem
+            // 
+            this.doneToolStripMenuItem.Name = "doneToolStripMenuItem";
+            this.doneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doneToolStripMenuItem.Text = "Done";
+            // 
+            // canceledToolStripMenuItem
+            // 
+            this.canceledToolStripMenuItem.Name = "canceledToolStripMenuItem";
+            this.canceledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.canceledToolStripMenuItem.Text = "Canceled";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.projetosScr);
-            this.Controls.Add(this.loginScr);
             this.Controls.Add(this.kanbanScr);
             this.Controls.Add(this.bomScr);
+            this.Controls.Add(this.projetosScr);
+            this.Controls.Add(this.loginScr);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1177,6 +1262,7 @@ namespace SGPA
             this.bomScr.ResumeLayout(false);
             this.bomScr.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1222,9 +1308,6 @@ namespace SGPA
         private System.Windows.Forms.Panel kanbanScr;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button kanbanVoltarBtn;
         private System.Windows.Forms.Button kanbanAddCardBtn;
@@ -1233,8 +1316,8 @@ namespace SGPA
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button novoCartaoAdcBtn;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RichTextBox cardDescRtxt;
+        private System.Windows.Forms.TextBox cardEquipeTxt;
         private System.Windows.Forms.Panel navPanel;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button bomBtn;
@@ -1263,6 +1346,18 @@ namespace SGPA
         private System.Windows.Forms.ComboBox revCb;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label erroNovoProjetoLbl;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem moveToToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem waitingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ongoingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem doneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem canceledToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
     }
 }
 

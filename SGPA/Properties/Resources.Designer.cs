@@ -103,6 +103,16 @@ namespace SGPA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cardMenu {
+            get {
+                object obj = ResourceManager.GetObject("cardMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kanban {
             get {
                 object obj = ResourceManager.GetObject("kanban", resourceCulture);
