@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>8542253_project_diagram_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -96,7 +99,10 @@
     <None Include="Resources\bom.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\8542253_project_diagram_icon.png" />
+    <Content Include="8542253_project_diagram_icon.ico" />
     <Content Include="Resources\cardMenu.png" />
+    <None Include="Resources\iconfinder_basics-19_296814.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

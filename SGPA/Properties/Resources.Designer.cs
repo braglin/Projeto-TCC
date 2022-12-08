@@ -83,6 +83,16 @@ namespace SGPA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8542253_project_diagram_icon {
+            get {
+                object obj = ResourceManager.GetObject("8542253_project_diagram_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _99867_guardar_save_icon {
             get {
                 object obj = ResourceManager.GetObject("99867_guardar_save_icon", resourceCulture);
@@ -106,6 +116,16 @@ namespace SGPA.Properties {
         internal static System.Drawing.Bitmap cardMenu {
             get {
                 object obj = ResourceManager.GetObject("cardMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_basics_19_296814 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_basics-19_296814", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
