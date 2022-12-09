@@ -74,16 +74,21 @@ namespace SGPA
                 {
                     tipoUsuarioTxt.Text = "Gerente";
                     fotoUsuario.Image = imageList1.Images[0];
+                    kanbanAddCardBtn.Visible = true;
+                    novoProjBtn.Visible = true;
+                    listaProjetos.Location = new Point(8, 84);
+                    listaProjetos.Height = 674;
                 }
                 else if (tipoUsuario == 1)
                 {
-                    tipoUsuarioTxt.Text = "Desenvolvedor";
-                    fotoUsuario.Image = imageList1.Images[1];
+                    tipoUsuarioTxt.Text = "Comprador";
+                    fotoUsuario.Image = imageList1.Images[2];
                 }
                 else if (tipoUsuario == 2)
                 {
-                    tipoUsuarioTxt.Text = "Comprador";
-                    fotoUsuario.Image = imageList1.Images[2];
+                    tipoUsuarioTxt.Text = "Desenvolvedor";
+                    fotoUsuario.Image = imageList1.Images[1];
+                    cadastrarBtn.Visible = false;
                 }
                 else
                 {
@@ -398,7 +403,6 @@ namespace SGPA
         #region Kanban
         private void KanbanAddCardBtn_Click(object sender, EventArgs e)
         {
-            string idx = ("Done");
             novoCartaoScr.Visible = true;
         }
 
@@ -501,26 +505,32 @@ namespace SGPA
                     }
                 }
             }
-           
-            string query = "SELECT id, descricao, equipe, categoria FROM dbo.kanban WHERE projid = " + projetoAtivo.ToString() + "";
-            using (SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=sgpa;Trusted_Connection=True;"))
-            {
-                using (SqlCommand sqlcmd = new SqlCommand(query, con))
-                {
-                    con.Open();
-                    SqlDataReader reader = sqlcmd.ExecuteReader();
 
-                    while (reader.Read())
+            try
+            {
+                string query = "SELECT id, descricao, equipe, categoria FROM dbo.kanban WHERE projid = " + projetoAtivo.ToString() + "";
+                using (SqlConnection con = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=sgpa;Trusted_Connection=True;"))
+                {
+                    using (SqlCommand sqlcmd = new SqlCommand(query, con))
                     {
-                        if (reader.HasRows)
+                        con.Open();
+                        SqlDataReader reader = sqlcmd.ExecuteReader();
+
+                        while (reader.Read())
                         {
-                            CriarCartao(String.Format("{0}", reader[0]), String.Format("{0}", reader[1]), String.Format("{0}", reader[2]), String.Format("{0}", reader[3]));
+                            if (reader.HasRows)
+                            {
+                                CriarCartao(String.Format("{0}", reader[0]), String.Format("{0}", reader[1]), String.Format("{0}", reader[2]), String.Format("{0}", reader[3]));
+                            }
                         }
+                        reader.Close();
+                        con.Close();
                     }
-                    reader.Close();
-                    con.Close();
                 }
             }
+            catch (Exception)
+            { }
+            
         }
 
         private void moverPendenteBtn_Click(object sender, EventArgs e)

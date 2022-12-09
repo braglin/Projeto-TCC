@@ -16,8 +16,22 @@ A ferramenta SGPA tem como objetivo facilitar o gerenciamento de um departamento
 
 ```
 
+## Banco de  Dados
+
+Utilizar os arquivos *.sql disponíveis na pasta SQLDB para recriar o banco de dados de teste.
+
+## Dados de Login
+```sh
+- Usuário: gerente1 | Senha: 1234
+- Usuário: comprador1 | Senha: 2345
+- Usuário: desenvolvedor1 | Senha: 3456
+
+```
 
 ## Release History
+* 0.0.0.4
+    * Adicionadas regras de acesso a funções de acordo com a categoria de usuário.
+	
 * 0.0.0.3
     * Adicionada tela de estoque
 	* Adicionada função de cadastra de item

@@ -426,6 +426,7 @@ namespace SGPA
             // projetosScr
             // 
             this.projetosScr.BackColor = System.Drawing.Color.Silver;
+            this.projetosScr.Controls.Add(this.listaProjetos);
             this.projetosScr.Controls.Add(this.salvarNovoProjeto);
             this.projetosScr.Controls.Add(this.bomBtn);
             this.projetosScr.Controls.Add(this.salvarProjetoBtn);
@@ -434,7 +435,6 @@ namespace SGPA
             this.projetosScr.Controls.Add(this.panel6);
             this.projetosScr.Controls.Add(this.panel5);
             this.projetosScr.Controls.Add(this.novoProjBtn);
-            this.projetosScr.Controls.Add(this.listaProjetos);
             this.projetosScr.Controls.Add(this.panel7);
             this.projetosScr.Enabled = false;
             this.projetosScr.Location = new System.Drawing.Point(194, 0);
@@ -763,6 +763,7 @@ namespace SGPA
             this.novoProjBtn.TabIndex = 8;
             this.novoProjBtn.Text = "Novo Projeto";
             this.novoProjBtn.UseVisualStyleBackColor = false;
+            this.novoProjBtn.Visible = false;
             this.novoProjBtn.Click += new System.EventHandler(this.novoProjBtn_Click);
             // 
             // listaProjetos
@@ -773,9 +774,9 @@ namespace SGPA
             this.listaProjetos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listaProjetos.FormattingEnabled = true;
             this.listaProjetos.ItemHeight = 24;
-            this.listaProjetos.Location = new System.Drawing.Point(8, 84);
+            this.listaProjetos.Location = new System.Drawing.Point(8, 9);
             this.listaProjetos.Name = "listaProjetos";
-            this.listaProjetos.Size = new System.Drawing.Size(176, 674);
+            this.listaProjetos.Size = new System.Drawing.Size(176, 746);
             this.listaProjetos.TabIndex = 7;
             this.listaProjetos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listaProjetos_MouseDoubleClick);
             // 
@@ -970,6 +971,7 @@ namespace SGPA
             this.kanbanAddCardBtn.TabIndex = 16;
             this.kanbanAddCardBtn.Text = "+";
             this.kanbanAddCardBtn.UseVisualStyleBackColor = false;
+            this.kanbanAddCardBtn.Visible = false;
             this.kanbanAddCardBtn.Click += new System.EventHandler(this.KanbanAddCardBtn_Click);
             // 
             // label8
@@ -1878,11 +1880,11 @@ namespace SGPA
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.projetosScr);
+            this.Controls.Add(this.loginScr);
             this.Controls.Add(this.kanbanScr);
             this.Controls.Add(this.estoqueScr);
             this.Controls.Add(this.bomScr);
-            this.Controls.Add(this.projetosScr);
-            this.Controls.Add(this.loginScr);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
