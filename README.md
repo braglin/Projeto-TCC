@@ -34,17 +34,19 @@ Utilizar os arquivos *.sql disponíveis na pasta SQLDB para recriar o banco de d
 	
 * 0.0.0.3
     * Adicionada tela de estoque
-	* Adicionada função de cadastra de item
+	* Adicionada função de cadastro de item
 	* Adicionada função de retirada de item
 	* Adicionada função de busca de item
 	* Resolvidos bugs de kanban e de versionamento de BOM
 	* Definição de icone da aplicação
+	
 	
 * 0.0.0.2
     * Adicionada função para incluir novo projeto
     * Adicionada função para atualizar projeto
     * Adicionada função para incluir novo cartão no Kanban
     * Alteração da paleta de cores
+
 
 * 0.0.0.1
     * Versão inicial do projeto
